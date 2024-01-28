@@ -1,1 +1,1 @@
-# Python-e-itimi
+# Python-egitimi
