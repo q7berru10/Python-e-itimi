@@ -1,0 +1,863 @@
+YASAKLI KELİMELERİ LİSTELERLER
+import keyword
+keyword.kwlist
+------------ 
+tam sayılar= int
+float/double gibidir= 100,02
+complex(karmaşık sayılar)=3.14j
+---------------
+delete kullanımı
+a=100
+b=20.01
+print("Tam Sayı=",a)
+print("Float=",b)
+del(a)
+----------------
+karakter dizisi
+
+str="Merhaba Dünya"
+
+print(str) #---> hepsini yazdırır
+print(str[0]) #---> İlk Karakteri yazar
+print(str[2:5]) #---> 3. ile 5. karakter arasını yazar
+print(str[2:]) #---> 3. karakterden başlayarak son karaktere kadar yazdırır
+print(str* 2) #---> 2 kere yazar
+
+Örneğin: 
+
+uni="Kara Harp Okulu Kara Havacılık Bölümü"
+print("UNIVERSITE")
+print("*********")
+print(uni[0:4])
+print(uni[5:9])
+print(uni[10:15])
+print("*********")
+print()
+print("BOLUM")
+print("------")
+print(uni[16:20])
+print(uni[21:30])
+print(uni[31:37])
+print("*********")
+--------------------------
+LİSTELER
+
+list1=['abcd',786,2.23,'Çorlu,70.2']
+list2=[123,'Merhaba']
+
+print(list1) #---> hepsini yazdırır
+print(list1[0]) #---> İlk Karakteri yazar
+print(list1[1:3]) #---> 2. ile 3. karakter arasını yazar
+print(list1[2:]) #---> 3. karakterden başlayarak son karaktere kadar yazdırır
+print(list1* 2) #---> 2 kere yazar
+print(list1+list2) #---> İki listeyi birleştirir
+------------------
+tuplel= aynı liste gibidir ama değiştirilemezler
+renkler=("Kırmızı","Sarı","Mavi")
+
+-----------------------------------
+SÖZLÜK
+
+dict1={}
+dict1['one']="Anahtar değeri string olarak one "
+dict1[2]    ="Anahtar değeri in olarak 2-"
+
+dict2={'Name':'Çorlu','code':5901,'dept':'Bilgisayar Mühendisliği'}
+
+print(dict1['one'])      # one anahtarının değerini döndürür
+print(dict1[2])          #2 anahtarının değerini döndürür
+print(dict2)             #tüm sözlüğü yazar
+print(dict2.keys())      #tüm anahtarları yazar
+
+
+sözlükte bir anahtar ve anahtarı değeri vardır
+
+ÖRNEKĞİN:
+
+dict1={}
+dict1={'Name':'Enes','Lastname':'Dede','Country':'Turkey','City':'Istanbul'}
+print(dict1.keys())
+print(dict1.values())
+---------------------
+değişken oluşturmadan toplama örneği
+
+dict1={}
+dict1={'Name':'Enes','Lastname':'Dede','Country':'Turkey','City':'Istanbul'}
+print(len(dict1.keys())+len(dict1.values()))
+--------------------------------------------
+convert/Dönüşüm
+
+(int'den float'a)
+a=12
+x=float(a)
+print(x)
+
+(float'dan int'e)
+a=12.0
+x=int(a)
+print(x)
+----------------
+String metotları
+dir("")
+--------
+replace= update işlemi 
+örnek=
+meyve="elma"
+meyve.replace("elma","Elma")
+-----------------------
+2. örnek=
+ad=input("Adınızı Giriniz= ")
+soyad=input("Soyadınızı Giriniz= ")
+print(ad.replace("e","E",1))
+print(soyad.replace("d","D",1))
+a=len(ad+soyad)
+print(a)
+-------------------
+split()------>Böle işlemidir
+
+cümle="Türkiye Büyük Millet Meclisi" 
+cümle.split(",")
+
+cümle="Türkiye Büyük Millet Meclisi" 
+cümle.rsplit(" ",1) (sadece verilen paremetreye kadar böler)
+---------------
+lower= tüm karakterleri küçük yazar
+ad="ADADADADA"
+ad.lower()
+-------------------
+upper= tüm harfleri büyük yazar
+ad="asdwsadxsadwa"
+ad.upper()
+--------------
+Soru:
+iller= "ISPARTA ADIYAMAN İSTANBUL ŞANLIURFA"
+iller.lower()
+iller=iller.split(" ")
+print(iller[0:7])
+
+print(iller[8:16])
+print(iller[17:25])
+print(iller[26:35])
+print(iller[36:41])
+-----------------
+islower,isupper---=büyük mü küçük mü 
+print(iller.islower())
+-----------------------------
+endswith(),startswith()-----------=ilk veya son harfinin büyükle mi başlıyor
+ad="Ada"
+print(ad.startswitch("a"))
+----------
+ad="Ada"
+print(ad.endtswitch("a"))
+-----------------------------
+capitalize()--------- sadece ilk harfi büyütür
+title= kaç kelime varsa sadece ilk harfini büyütür
+-------------------------
+soru:
+ad=input("Lütfen Adınızı Giriniz= ")
+soyad=input("Lütfen Soyadınızı Giriniz= ")
+print()
+print("Büyük Harf ile mi başlamış (False= olumlu-True= olumsuz)")
+print(ad.isupper())
+print(soyad.isupper())
+print()
+print("Küçük Harf ile mi başlamış (False= olumlu-True= olumsuz)")
+print(ad.islower())
+print(soyad.islower())
+-------------------------------
+count()----------- sayma işlemleri yapar(büyük küçük harfa duyarlıdır)
+
+cumle="Mustafa Kemal Ataturk"
+cumle.count("a")
+------------------
+Max/Min
+ÖRNEK KULLANIMDIR
+
+en_büyük=max(liste)
+en_küçük=min(liste)
+---------------------
+center()------ortalar
+ders?"PYTHON PROGRAMLAMA"
+
+ders.center(30)
+--------------------
+find,rfind-bulma işlemi
+
+ders="PYTHON PROGRAMLAMA"
+ders.rfind("")
+------------------
+İSALPHA()-----------alfabetik olup olmadığını sorgular
+gun="cumartesi"
+gun.isalpha()
+
+gun="cumartesi 1111"
+gun.isalpha()
+----------------------------
+isalnum--------alfanumarik mi değilmi sorgular
+gun="cumartesi 1111"
+gun.isalnum()
+-----------------
+İSDECİMAL() --------------sadece sayılardan mı oluşuyor diye sorgular
+
+gun= "1111"
+gun.isdecimal()
+----------------------
+Alıştırma:
+
+list=['Ad','Soyad','Yas','İl','İlce','x','Okul']
+print(type(list))
+len(list)------------------->elemanları saydırır
+list.append("Asker")----->listeye yeni eleman ekler
+print(list)
+del list----------> Listeyi siler
+------------------------
+list=['Ad','Soyad','Yas','İl','İlce','x','Okul']
+list1=['Enes','Dede','17','İstanbul','Güngören','x','Msü']
+print(type(list))
+len(list)
+list1.append("Asker= T.S.K")
+
+list[6]='Okul'
+print(list,'/n',list1)
+-------------------------
+import keyword
+keyword.kwlist
+a=len(keyword.kwlist)
+print('Bu Listenin Uzunluğu ',a,'Karakterdir ve','Bu Listenin 24. Karakteri ' +keyword.kwlist[24],"'Dir")
+--------------------------------
+extend()-----------listeyi genişletir
+
+li1=[1,2,3]
+li2=[6,7,8,9]
+li1.extend(li2)
+print(li1)----------------->iki listeyi birleştirip tek liste yapar
+----------------------------
+insert---->ekleme işlemidir lakin nereye ekleyeceğinizi de sorar
+
+li1=[1,2,3]
+li2=[6,7,8,9]
+li1.extend(li2)
+li1.insert(0,'Semih Özbey <3')
+print(li1)
+---------------
+remove()---birnevi silme işlemi yapar
+
+li1=[1,2,3]
+li2=[6,7,8,9]
+li1.extend(li2)
+li1.insert(0,'Semih Özbey <3')
+li1.remove(1)
+print(li1)
+-------------
+reverse()-------->listeyi tersten yazdırır
+
+li1=[1,2,3]
+li2=[6,7,8,9]
+li1.extend(li2)
+li1.insert(0,'Semih Özbey <3')
+
+print(*reversed(li1))
+-------------------
+dir() metotları listeler
+print(dir())
+-----------
+help------ yardım eder
+print(help(x değişkeni))
+---------------------
+sorted()------- metni alfabetik sıraya dizer
+storted("Metin")
+-----------------------
+Alıştırma
+
+cinsiyet=input("Cinsiyetin Nedir ?= ")
+isim=input("İsminiz Nedir ?= ")
+print("Merhaba Tanıştığıma memnun oldum ",isim and '/n')
+yas=input("Kaç Yaşındasın ?= ")
+print("demek ",yas,"Yaşındasın", "Genç mi Yaşlı mı olduğuna Karar Veremedim ",isim)
+ev=input("Kargonun Yönlendirilmesi için ev adresini gönderirmisin ?= ")
+print("Harika! ",isim,"Kargon 3 iş günü içerisinde şu adrese=",ev,"Gönderilecektir")
+print()
+print()
+print(sorted(isim))
+-------------------
+pow()-----od almadır
+pow(3,5)
+-----------------
+sum()------toplama işlemidir listeler toplanır
+
+li1=[2,3,4,5]
+li2=[10,23]
+print(sum(li1),sum(li2))
+--------------
+SÖZLÜKLER
+
+kelimeler={"Ö":"O","Ş":"S","İ":"I"}
+print(kelimeler["Ö"])----SÖZLÜK İÇERİSİNDE ELEMAN ARAMA
+
+örnek:
+
+telefon_defteri={"Celal Şengör":"0530-939-47-61","İlber Ortaylı":"0544-984-00-49","Murat Bardakçı":"0555-985-34-34"}
+kişi=input("Öğrenmek İstediğiniz Kişinin Adını ve Soyadını giriniz: ")
+
+
+numara=telefon_defteri[kişi]------burada verilen komutun çıması için bir değişken oluşturup kişiyi içine attı
+print(kişi+ "'ün"" Telefon Numarası: ",numara)
+-----------------------------------
+format--------birleştirme işlemidir 
+
+print("{} ve {} iyi bir ikilidir".format("Python", "Django"))-------burada print içerisine süslü parantezlerle iki parametre oluşturup sonra sırası ile parametrelere işlem yapılmıştır
+-----------------
+dilekce= """
+tarih: {}
+T.C.
+{} Üniversitesi
+{} Fakültesi Dekanlığına
+Fakülteniz {} bölümü {}  numaralı öğrencisiyim. Ekte sunduğum belgeselde belirtilen mazeretim gereğince {} eğitim-öğretim yılı {}
+yarıyılında öğretime ara izni (kayıt dondurma) istiyorum.
+bilgilerinizi ve gereğini arz ederim.
+Imza
+Ad: {}
+Soyad: {}
+T.C. Kimlik No: {}
+Adres: {}
+Tel.: {}
+Ekler: {}
+"""
+Tarih=input("Tarih: ")
+Üniversite=input("Ünversite adı: ")
+fakülte= input("Fakülte adı: ")
+bölüm=input("Bölüm Adı: ")
+ögrenciNo=input("Öğrenci No: ")
+Ögretimyılı=input("Öğretim Yılı: ")
+öğretimyariyil=input("Öğretim Yarı Yılı: ")
+Ad=input("Adınız: ")
+Soyad=input("Soyadınız= ")
+Tc=input("T.C.Kimlik Noğunuz: ")
+Adres=input("Adresiniz: ")
+Tel=input("Telefon Numaranız= ")
+ekler=input("Ekler: ")
+print(dilekce.format(Tarih,Üniversite,fakülte,bölüm,ögrenciNo,Ögretimyılı,öğretimyariyil,Ad,Soyad,Tc,Adres,Tel,ekler))
+--------------------------------------------
+kelimeler={"Ö":"O","Ş":"S","İ":"I"}
+
+kelimeler["Ö"]="Adana"
+print(kelimeler)----------------sözlüğe ekleme yapma
+-------------------------------------------------
+
+karakter_dizisi= " ".join(notlar.keys())
+print(karakter_dizisi)----------------------- iki tırnak içine ne koyarsan onun ile böler
+-----------------------------------
+print(notlar.items())----------liste yapar
+
+ogrenciler={"1001":"Ahmet","1281":"Ali","1980":"Enes"}
+for ogrenci_no,ogrenci_ad in ogrenciler.items():
+  print(f"Öğrenci No: {ogrenci_no},Öğrenci Ad: {ogrenci_ad}")
+---------------------------
+get()--------Sorgular
+
+notlar={"Seda":1,"Ege":98,"Yunus":0,"Elif":65,"Enes":70,"Ali":10}
+
+sorgu= input("Lütfen Öğrenci smini giriniz: ")
+print(notlar.get(sorgu,"Girilen isim öğrenci listesinde yoktur"))
+---------------------
+clear()--------sözlük içindeki verileri siler
+
+print(notlar.clear())
+------------------------
+copy()---------kopyalama işlemi
+
+
+yedek_notlar=notlar=notlar
+yedek_notlar=notlar.copy()
+----------------------------
+fromkeys()----------Sözlük yapar
+
+Personel=["Seda","Ege","Yunus","Elif","Enes","Ali"]
+Adresler=dict.fromkeys(Personel,"Güngören/Haznedar")
+print(Adresler)
+-----------------------------
+setdefult
+
+personel={"Seda":1,"Ege":98,"Yunus":0,"Elif":65,"Enes":70,"Ali":10}
+personel.setdefault("en iyiler",("Davut","Ahmett"))
+print(personel)
+------------------
+update
+
+notlar={"Seda":1,"Ege":8,"Yunus":0,"Elif":5,"Enes":0,"Ali":0}
+yeni_notlar={"Seda":1,"Ege":98,"Yunus":0,"Elif":65,"Enes":70,"Ali":10}
+notlar.update(yeni_notlar)
+print(notlar)
+------------------------
+if else
+boy=int(input("Boyunuzu Giriniz"))
+
+if (boy<="1.50"):
+    print("Boyunuz Kısa (cücesiniz)")
+else:
+    print("Boyunuz Gayet Uzun")
+---------------
+kullanıcı_adi=input("Lütfen Kullanıcı Adınızı Giriniz= ")
+sifre=input("Lütfen Şifrenizi Giriniz= ")
+
+if(kullanıcı_adi=="Bahriyeli_dede" and sifre=="1234"):
+   print("Hoşgeldiniz....")
+else:
+    print("Kullanıcı Adı veya şifre hatalı!!!!!!!")
+-----------------------------
+ÖDEV: EHLİYET
+
+print("****EHLİYET BAŞVURU****")
+print()
+yas=int(input("Lütfen Yaşinzi Giriniz: "))
+if(yas<18):
+    print("Üzgünüz yaşiniz ehliyet almaya yetmiyor...")
+if(yas>=18 and yas<65):
+    print("Tebrikler! Ehliyet başvurunuz onaylanmiştir...")
+if(yas>=65):
+    print("Üzgünüz. Ehliyet almak için çok yaşlisiniz")
+----------------------------
+in()------- değişken içinde arama
+
+------------------------------
+and,or,not
+
+AND=
+kullanıcı_adi=input("Lütfen Kullanıcı Adınızı Giriniz= ")
+sifre=input("Lütfen Şifrenizi Giriniz= ")
+
+if(kullanıcı_adi=="Bahriyeli_dede" and sifre=="1234"):
+   print("Hoşgeldiniz....")
+else:
+    print("Kullanıcı Adı veya şifre hatalı!!!!!!!")
+
+OR=
+kullanıcı_adi=input("Lütfen Kullanıcı Adınızı Giriniz= ")
+sifre=input("Lütfen Şifrenizi Giriniz= ")
+
+if(kullanıcı_adi=="Bahriyeli_dede" or kullanıcı_adi=="bahriyeli_dede" and sifre=="1234"):
+   print("Hoşgeldiniz....")
+else:
+    print("Kullanıcı Adı veya şifre hatalı!!!!!!!")
+
+NOT=
+kullanıcı_adi=input("Lütfen Kullanıcı Adınızı Giriniz= ")
+sifre=input("Lütfen Şifrenizi Giriniz= ")
+
+if(kullanıcı_adi=="Bahriyeli_dede" or kullanıcı_adi=="bahriyeli_dede" and sifre=="1234"):
+   print("Hoşgeldiniz....")
+if(not sifre and not kullanıcı_adi):
+    print("Parola ve kullanıcı adı Boş bırakılamaz")
+else:
+    print("Kullanıcı Adı veya şifre hatalı!!!!!!!")
+-------------------------------------
+elif/else if
+yas=int(input(("Kaç Yaşındasın= ")))
+if(yas==18):
+    print("18 iyidir!")
+elif(yas<=0):
+    print("Yok canım daha neler!!!")
+elif(yas<18):
+    print("Gençsin")
+elif(yas>18):
+    print("Eh,artık yaşlanıyorsun")
+-------------------------------
+mod= %
+
+sayi= int(input("lütfen bir sayı giriniz= "))
+if(sayi%2==0):
+    print("sayi çifttir")
+ else:
+    print("sayi tektir")
+---------------
+range() iki sayı arasındaki aralıkları dolduru eğer 3. parametre doldurulmazsa birer birer yazdırır
+
+print(*range(1,10,2))
+--------------------------------------
+for dögüsü
+
+tr_harfler=("iüşçö") --------------tr harfler değişkeninin içindeki verileri harf değikenine atıp döngüye aldırk
+for harf in tr_harfler:
+  print(harf)
+--------------------
+tr_harfler=("iüşçö")
+print(*tr_harfler,sep="\n")------alt alta yazdırır
+--------------------
+
+for sayılar in range(1,10):
+  print(sayılar)
+--------------------
+tr_harfler=("iüşçö")
+parola=input("Parola= ")
+for karakterler in parola: ------------------parola içindeki şifre karaktere aktarıldı
+  if karakterler in tr_harfler: -------------- karakterin içinde tr_harfler içindekiler var mı diye kontrol etti
+   print("Türkçe karakterler kullanılamaz")-------------eğer varsa belirtilen mesajı verdi
+----------------------------------
+renkler=("Kırmızı","Sarı","Mavi")
+for indeks,meyve in enumerate (renkler):-----------numaralandırır
+  print(f"{indeks}:{meyve}")------------------numaralandırır
+-----------------------------------
+ogrenciler={"1001":"Ahmet","1281":"Ali","1980":"Enes"}
+for ogrenci_no,ogrenci_ad in ogrenciler.items():
+  print(f"Öğrenci No: {ogrenci_no},Öğrenci Ad: {ogrenci_ad}")
+--------------------
+for toplama işlemi
+
+
+
+sayılar=[1,2,3,4,5]
+toplam=0
+for sayi in sayılar:
+  toplam=toplam+sayi
+
+print("Toplam= ",toplam)
+-----------------------------
+sayilar=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+for sayi in sayilar:
+  if(sayi%2==0):
+    print(sayi)
+-------------------------------------
+sayilar=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+if len(sayilar)>0:
+  for sayii in sayilar:
+    print(sayii)
+else:
+  print("Eleman yok!")
+-----------------------------------
+kullanıcıdan sayı alıp bastırmak
+
+a=int(input("Başlanıç sayısını giriniz: "))
+b=int(input("Bitiş Noktasını giriniz: "))
+for i in  range(a+1,b):
+  print(i)
+---------------------------------------------------
+iç içe for
+
+sayilar=[1,2,3,4]
+for sayi in sayilar:
+  print("1.döngü çalıştı sayi={}".format(sayi))
+for sayi in sayilar:
+  print("2.döngü çalıştı sayi={}".format(sayi))
+-----------------------------------------------
+while döngüsü
+
+a=1---------->1'den başlattı
+while a<10:------------>10 olana kadar dedik
+  a+=1----------------------->bir bir arttır dedik
+  print("bilgisayar delirdi")
+------------------------------------
+a=1
+while a<=6:
+  print(a)
+  if(a==3):
+    break--------->belirtilen duruma gelince dönmgüyü kırar
+  a+=1
+-----------------------
+FOR ÖNEMLİ ÖRNEK
+
+for i in range(0,9):
+  for j in range(0,9):
+    print("*",end=" ")
+  print()
+-----------------
+for i in range(0,10):
+    print(" "* (9-i)+"*"*(2*i-1))---------9 ile 1 çıkarıp boşluğu 8 ile çarpmış ve 2 ile biri çarparak * koymuş
+-----------------------------
+for i in range(0,10):
+    print(" "* (9-i)+"*"*(2*i-1))
+for j in range(0,):
+       print("*",end="")
+for k in range(0,7):
+      print(" "*(11-j)+"*"*(1*j))
+--------------------------------
+Çerçeveler
+
+import random
+a=liste=(10,20,30,40,50)
+random_eleman =random.choice(liste)
+print("Rastgele Eleman:",random_eleman+10)
+------------------------------------------
+import random
+random_eleman=random.randrange(0,20)
+print("Rastgele eleman: ",random_eleman)----------->eğer belli bir aralık istiyorsanız randrange'yi kullanabilirsiniz
+---------------------------------------------
+LİSTEYİ KARIŞTIRMAK
+import random
+sayilar=[10,20,30,40,50]
+Karismis_eleman=random.shuffle(sayilar)
+print("Rastgele eleman: ",sayilar)
+--------------------------------------
+gauss(ort,sigma)fonksiyonu ile normal dağılımlı rastgele sayılar üretebilirsiniz. ort ortalama, sigma ise standart sapmadır.
+-----------------------------------------
+
+import random
+result=int(random.uniform(1,10))------------bu metot belirtilen 2 sayı arasında rastgele birini seçer ve ondalıklı olarak verir ama başına int koyulursa tam sayılarını verir
+print(result)
+
+import random as rd(takma ad oluşturur)
+-------------------------
+modüller
+
+math------matematik işlemleri için
+
+import math
+a=math.sqrt(5)---------kare kök alma
+b=math.factorial(5)------------faktoriyal alma
+print("faktoriyel:",a)
+
+---------------------
+datetime(tarih için kullanılıan)
+
+import datetime
+print(datetime.datetime.now())----------------şimdiki zamanı saniye saniyesine verir
+*********************************************
+import datetime
+print(datetime.datetime.now().year)-----------yılı verir
+print(datetime.datetime.now().day)-----------günü verir
+print(datetime.datetime.now().month)-----------ayı verir
+**********************************************************
+GELECEK TARİHİ BULMAK
+
+import datetime #-----------datetime modül'ünü çağırdık
+bugün=datetime.datetime.today()  #-----------bugünü bulduk
+fark= datetime.timedelta(days=200,seconds=40,microseconds=30) #-----------kaç gün-saat-saniye ileri gideceğimizi ayarladık
+gelecek=bugün+fark #-----------bugünle geleceği topladık
+gelecek.strftime("%c") 
+print(gelecek)#---------bugünden 200 gün, 40 saniye, 30 mikrosaniye sonrası
+*********************************************
+GEÇMİŞ TARİHİ BULMAK
+
+import datetime #-----------datetime modül'ünü çağırdık
+bugün=datetime.datetime.today()  #-----------bugünü bulduk
+fark= datetime.timedelta(days=200,seconds=40,microseconds=30) #-----------kaç gün-saat-saniye geriye gideceğimizi ayarladık
+geçmiş=bugün-fark #-----------bugünden geçmişi çıkardık
+geçmiş.strftime("%c") 
+print(geçmiş)#---------bugünden 200 gün, 40 saniye, 30 mikrosaniye öncesi
+--------------------------------------------
+import datetime #-----------datetime modül'ünü çağırdık
+
+gun = input("Lütfen bir tarih giriniz (GG/AA/YYYY): ") #----------Tarih İstedik
+istek = input("Ne yapmak istersiniz? (Gün Bilgisi): ") #---------- Gün Bilgisi Yazılmasını İstedik
+if istek == "Gün Bilgisi": #----------Gün Bilgisi  Yazılırsa....
+    
+        print(tarih.strftime("%A")) #----------Günün İsmini Versin
+        
+else #----------Eğer Yazılmazsa....:
+    print("Geçersiz istek.") #----------Bunu Yazsın
+--------------------------
+Fonksyon oluşturma
+
+def toplama(a,b): -----------> iki parametre verildi
+    toplam=a+b ------------->sonucu toplayıp değişkene atadık
+    return toplam ------------->değeri döndürdük
+   
+fonksiyon_sonuc=toplama(5, 7)-------------------> fonksiyonu çağırdık ve parametre verdik
+print("Toplam Sonuc= {}".format(fonksiyon_sonuc))---------formatla birleştirip yazdırdık
+
+2.YOL
+def toplama(a,b):
+    toplam=a+b
+    return toplam
+   
+a=int(input("Lütfen Birinci Sayıyı Giriniz= "))
+b=int(input("Lütfen ikincici Sayıyı Giriniz= "))
+print("Toplam Sonuc= ",toplama(a, b))
+-----------------------------------
+def selamla(isim="Misafir"): --------->Eğer isim boş verilirse misafiri isime ata
+    print("Merhaba",isim) ------------->selamladık
+    
+selamla()----------fonksyonu boş gönderdik
+selamla("Berk")-----------isimle yolladık
+--------------------------------------------
+
+def toplama(a,b=0):
+    return a+b
+
+a_sonuc1=toplama(5, 10)
+a_sonuc2=toplama(1, )
+print("Toplam (1.işlem)= ",a_sonuc1,"Toplam (2. işlem)= ",a_sonuc2
+------------------------------------
+def ortalama_hesapla(notlar):#--------ortalama fonksyonu oluşturup notlar listesini içine koyduk
+    toplam=sum(notlar)#--------notları topladı
+    ortalama=toplam/len(notlar)#-----------toplamı notlara böldük
+    return ortalama#-------ortalamayı döndürdük
+
+notlar=[80,90,70,87,99,100,89,64]#--------liste oluşturduk
+sonuc=ortalama_hesapla(notlar)#------sonuc değişkeni oluşturup ortalamayı içine attık
+en_buyuk=max(notlar)
+en_kucuk=min(notlar)
+print("Ortalamanız=",sonuc,"En Düşük Notunuz=",en_kucuk,"En Yüksek Notunuz",en_buyuk)
+---------------------------------------------
+isinstance: karşılaştırma metodudur
+
+def tuple_istatisktikleri(*args):
+  toplam=sum(args)
+  ortalama=toplam/len(args)
+  en_buyuk=max(args)
+  return toplam.ortalama,en_buyuk
+
+def eleman_analiz_et(*args):
+  print("analiz sonuçları:")
+  for i in args:
+    if isinstance(i,int):
+      print("tamsayı".format(i))
+    elif isinstance(i,float):
+      print("Ondalıklı sayı".format(i))
+    elif isinstance (i,str):
+      print("metin".format(i))
+    elif isinstance (i,list):
+      print("Liste".format(i))
+    elif isinstance (i,dict):
+      print("Sözlük".format(i))
+    else:
+      print("Bilinmeyen veri Türü".format(i))
+
+eleman_analiz_et(10,"merhaba",3.8,[7,8,9],{"key":"value"})
+----------------------------------------
+def sozluk(**kwargs): --------sözlükte fonksyon oluşturduk
+  for key, value in kwargs.items():
+    print(key,":",value)
+
+sozluk(ad="melisa",soyad="Aydın",yas=15)
+-------------------------------------------
+def toplama(a,b):
+  return a+b
+
+def carpma_ve_toplama(a,b,c): --------parametreler oluşturuldu
+    carpma=a*b       ----------ilk iki sayı çarpıldı
+    toplam=toplama(carpma,c) ---------- iki fonksyonu birleştirip ÇARPMANIN sonucunu c ile topluyor
+    return toplam -----------toplamı döndürdü
+
+sonuc=carpma_ve_toplama(3,5,4)
+print("Çarpma ve toplama sonucu:",sonuc)
+0
+----------------------------
+KÜTÜPHANE BİRLEŞTİRME 1. SATIR
+#------------------
+
+def toplama(a,b):
+  return a+b
+def cikarma (a,b):
+ return a-b
+def bolme(a,b):
+ return a/b   
+def carpma (a,b):
+ return a*b
+#--------------
+
+import math
+print("****HESAP MAKİNESİ****")
+print()
+print("Toplama İşlemi için 1'e Basınız")
+print("Çıkarma İşlemi için 2'ye Basınız")
+print("Çarpma İşlemi için 3'e Basınız")
+print("Bölme İşlemi için 4'e Basınız")
+print("Faktoriyal Almak İÇin 5'e Basınız")
+print("karekök Almak İÇin 5'ya Basınız")
+print("------------------------------")
+operator=input("Lütfen Bir Operatör Seçiniz= ")
+sayi1=float(input("Lütfen 1. Sayıyı Giriniz= "))
+sayi2=float(input("Lütfen 2. Sayıyı Giriniz= "))
+
+if operator=="1":
+  print("Toplama İşleminizin Sonucu= ",sayi1,sayi2)
+elif operator=="2":
+  print("Çıkarma İşleminizin Sonucu= ",cikarma(sayi1,sayi2))
+elif operator=="3":
+  print("Çarpma İşleminizin Sonucu= ",carpma(sayi1,sayi2))
+elif operator=="4":
+  print("Bolme İşleminizin Sonucu= ",bolme(sayi1,sayi2))
+elif operator=="5":
+  faktoriyal= float(input("Lütfen Faktoriyalini almak istediğiniz Sayıyı Giriniz= "))
+  faktoriyal=math.factorial(faktoriyal)
+elif operator=="6":
+  karekok= float(input("Lütfen Karekök'ünü almak istediğiniz Sayıyı Giriniz= "))
+  karekok=math.sqrt(karekok)
+-----------------------------
+hATA YÖNETİMİ
+
+---------
+streamlit kütüphanesi
+
+install pip streamlit #indirmeye yardımcı olur
+
+import streamlit as st
+
+st.title("Deneme Mesajı") --------bunu yazdıktan sonra kaydedip anaconda promt' girip nereye kaydettiysek başına cd yazıyoruz ve enter dedikten sonra streamlit run untitled2.py yazıyoruz ( untitled2.py örnektir siz dosyanın adını yazın)
+st.title("Deneme Mesajı")
+st.header("Başlık")
+st.subheader("Alt başlık")
+st.text("Metin yazma")
+st.write("Metin Yazma V2")
+
+st.button("Buton")
+
+st.checkbox("Onay Kutusu")
+
+st.radio("Seçenek metni",["Seçenek 1","Seçenek2","Seçenek3"])
+----------------------------------------------------------------
+import streamlit as st
+import math
+
+st.title("Basit stream lit uygulaması")
+
+sayi=st.number_input("1 sayı giriniz")
+if st.button("Kare Kök Al"):#---------if'e koşul olarak buton ekleyip butona karekök al dedik bunun anlamı çalıştırınca...yap demektir
+    karekok=math.sqrt(sayi)#--------karekök aldık
+    st.success(f"{sayi}'nın karekökü: {karekok}")#---------success çalışınca yeşil olarak çalıştırır 
+-----------------------------------------------
+uygulama 2
+
+def toplam(a,b):
+    return a+b
+st.title("Toplama İşlemi")
+sayi1=st.number_input("1. Sayıyı Giriniz")
+sayi2=st.number_input("2. Sayıyı Giriniz")
+
+if st.button("Topla"):
+    sonuc=toplam(sayi1,sayi2)
+    st.success(f"Toplam= {sonuc}")#---------success çalışınca yeşil olarak çalıştırır 
+-----------------------------------------------
+uygulama 3
+
+st.title("Bilgilerinizi Giriniz")
+
+isim=st.text_input("Kullanıcı Adınızı Giriniz= ")
+sifre=st.text_input("Şifrenizi Giriniz= ")
+
+kayitli_isim="Admin"
+kayitli_sifre="12345"
+if st.button("Giriş Yap"):
+    if isim==kayitli_isim and sifre==kayitli_sifre:
+        st.write("Giriş Başarılı...")
+        st.balloons()
+    else:
+        st.error("KULLANICI ADI VEYA ŞİFRE HATALI!!!!")
+else:
+    st.write("Henüz Giriş Yapılmadı...")
+---------------------------------------------
+import streamlit as st 
+st.title("ÜNİVERSİTE NOT HESAPLAMA PROGRAMI")
+
+vize=st.number_input("Vize Notunuzu Giriniz= ")
+final=st.number_input("Final Notunuzu Giriniz= ")
+
+buton=st.button("Hesapla")
+if buton:
+    if (vize >=0 and vize <=100) and (final>=0 and final<=100):
+        ortalama= ((vize*0.4)+(final*0.6))
+        st.success(f"Not Ortalamanız= {ortalama}")
+        if ortalama>=90:
+            harf_notu="AA"
+            st.balloons()
+        elif ortalama>=80:
+             harf_notu="BA"
+        elif ortalama>=70:
+             harf_notu="BB"
+        elif ortalama>=30:
+             harf_notu="CC"
+        else:
+             harf_notu="FF"
+        st.write("Harf Notunuz= ",harf_notu)
+else:
+    st.error ("Geçersiz Değer")
